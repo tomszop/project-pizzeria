@@ -33,7 +33,22 @@
     },
   };
 
+  // eslint-disable-next-line no-unused-vars
+  const classNames = {
+    menuProduct: {
+      wrapperActive: 'active',
+      imageVisible: 'active',
+    },
+  };
 
+  // eslint-disable-next-line no-unused-vars
+  const settings = {
+    amountWidget: {
+      defaultValue: 1,
+      defaultMin: 1,
+      defaultMax: 9,
+    }
+  };
 
   const templates = {
     menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
@@ -162,43 +177,15 @@
             if(option.hasOwnProperty('default') == true) {
               price -= option.price;
             }
-          }
-
-          /*
-          const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
-          if(optionSelected) {
-            // check if the option is not default
-            if(!option.default == true) {
-              // add option price to price variable
-              price = option.price + price;
-            }
-          } else {
-            // check if the option is default
-            if(option.default == true) {
-            // reduce price variable
-              price = price - option.price;
-            }
-
-*/
-
-
-
-          
+          }                
           //console.log(optionId, option);
         }
       }
 
       // update calculated price in the HTML
       thisProduct.priceElem.innerHTML = price;
-
-
-
-
-
-
       //console.log(thisProduct);
     }
-
   }
   
   const app = {
@@ -230,13 +217,5 @@
     },
   };
 
-
   app.init();
-
-
-
-
-
-
-
 }
