@@ -125,7 +125,7 @@
     
           if(optionSelected) {
             // option is selected!
-            params[paramId].options = option;
+            params[paramId].options[optionId] = option.label;
             
           }
         }
